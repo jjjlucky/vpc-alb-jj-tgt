@@ -1,4 +1,4 @@
-variable "key_algorithmn" {
+variable "key_algorithm" {
     description = "This is the key algorithm"
     default = "RSA"
 }

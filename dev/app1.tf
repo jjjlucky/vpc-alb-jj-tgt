@@ -2,15 +2,15 @@ provider "aws" {
   region = "us-east-1"
 }
 module "keypair" {
-  source = "../modules/keypair"
+  source        = "../modules/keypair"
   pem_file_name = "devkeytest.pem"
-  the_key_name = "devkeytest"
- // pem_file_permission = 600
+  the_key_name  = "devkeytest"
+  // pem_file_permission = 600 (where this can be any permission)
 }
 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
- 
+  
   name = "devapp1"
   cidr = "10.0.0.0/16"
 
@@ -22,7 +22,7 @@ module "vpc" {
   enable_vpn_gateway = false
 
   tags = {
-    Terraform = "true"
+    Terraform   = "true"
     Environment = "dev"
   }
 }

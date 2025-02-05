@@ -1,6 +1,6 @@
 # generate keypair
 resource "tls_private_key" "tls" {
-  algorithm = var.key_algorithmn
+  algorithm = var.key_algorithm
   rsa_bits  = var.rsa_bits_size
 }
 resource "aws_key_pair" "key" {
